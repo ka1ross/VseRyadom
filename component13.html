@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./component13.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Avenir:wght@800&display=swap" />
+</head>
+
+<body>
+  <form method="post" enctype="multipart/form-data"
+    action="C:\Users\akkta\OneDrive\Документы\php\VseRaydom\src\actions\register.php">
+    <div class="div40">
+      <img class="child152" alt="" src="./public/group-55.svg" />
+
+      <img class="subtract-icon6" alt="" src="./public/subtract6.svg" />
+
+      <img class="subtract-icon7" alt="" src="./public/subtract7.svg" />
+
+      <img class="subtract-icon8" alt="" src="./public/subtract8.svg" />
+
+      <img class="child153" alt="" src="./public/group-56.svg" />
+
+      <img class="gradient-icon16" alt="" src="./public/gradient10@2x.png" />
+
+      <a href="./component11.html" class="toLogin icon171" id="Login">Вход</a>
+
+      <img class="icon172" alt="" src="./public/66.svg" />
+
+      <img class="icon173" alt="" src="./public/79.svg" />
+
+      <input type="text" maxlength="255" name="Fio" class=" FioInput" placeholder="ФИО" required />
+
+      <input type="text" maxlength="255" name="LiveAreaInput" class="LiveAreaInput" placeholder="Район" required />
+
+      <input type="text" maxlength="17" name="NumberPhoneInput" class="NumberPhoneInput" placeholder="Номер телефона"
+        required />
+
+      <input type="date" name="DateBirth" class="DateBirth" placeholder="Дата рождения" required />
+
+      <input type="text" maxlength="50" name="LoginInput" class="LoginInput" placeholder="Логин" required />
+
+      <input type="password" maxlength="50" name="PasswordInput" class="PasswordInput" placeholder="Пароль" required />
+
+      <input type="password" maxlength="50" name="AgainPasswordInput" class="AgainPasswordInput"
+        placeholder="Повторите пароль" required />
+
+      <img class="child156" alt="" src="./public/line-1651.svg" />
+
+      <img class="group-icon25" alt="" src="./public/group3.svg" />
+
+      <img class="vector-icon53" alt="" src="./public/vector20.svg" />
+
+      <img class="vector-icon54" alt="" src="./public/vector14.svg" />
+
+      <img class="group-icon26" alt="" src="./public/group11.svg" />
+
+      <img class="group-icon27" alt="" src="./public/group12.svg" />
+
+      <img class="child161" alt="" src="./public/group-121.svg" />
+
+      <button id="registrationButton" class="child162 buttonRegistration">Зарегистрироваться</button>
+
+      <img class="character-icon2" alt="" src="./public/character1.svg" />
+
+      <img class="group-icon28" alt="" src="./public/group4.svg" />
+
+      <img class="icon182" alt="" src="./public/-7.svg" />
+
+      <img class="icon183" alt="" src="./public/76.svg" />
+
+      <input class="checkboxOVZ" type="checkbox" id="checkboxOVZ" />
+      <input type="text" maxlength="50" name="NumberOVZ" id="NumberOVZ" style="display: none; opacity: 0;"
+        class="NumberOVZ" placeholder="Номер удостоверения ОВЗ" required />
+      <img style="display: none;" id="icon170" class="icon170" alt="" src="./public/vector16.svg" />
+      <input type="file" maxlength="50" name="OVZ" id="fileOVZ" style="display: none; opacity: 0;" class="OVZ"
+        placeholder="Удостоверение ОВЗ" required />
+      <img id="icon169" style="display: none;" class="icon169" alt="" src="./public/group13.svg" />
+      <input class="checkboxVoloonteer" type="checkbox" id="checkboxVoloonteer" />
+      <input type="text" maxlength="50" name="NumberValonteer" id="NumberValonteer" style="display: none; opacity: 0;"
+        class="NumberValonteerBook" placeholder="Номер волонтерской книжки" required />
+      <input type="file" maxlength="50" name="CheckValonteer" id="CheckValonteer" style="display: none; opacity: 0;" class="ValonteerFile"
+        placeholder="Скан волонтерской книжки" required />
+      <script type="text/javascript">
+        checkboxOVZ.addEventListener("click", checked);
+        checkboxVoloonteer.addEventListener("click", checkedValonteer);
+        var btn = document.querySelector(".child162");
+        
+        function checked() {
+          var checkboxDisabled_Person = document.getElementById("checkboxOVZ");
+          var checkboxValonteer = document.getElementById("checkboxVoloonteer");
+          var input1 = document.getElementById("fileOVZ");
+          var input = document.getElementById("NumberOVZ");
+          var image = document.getElementById("icon170");
+          var image1 = document.getElementById("icon169");
+          
+          if(checkboxDisabled_Person.checked){
+             checkboxValonteer.checked = false;
+             fadeIn(input, 70);
+             fadeIn(input1, 70);
+             input.style.display = "block";
+             input1.style.display = "block";
+             image.style.display = "block";
+             image1.style.display = "block";
+             moveDown();
+             checkedValonteer();
+          }
+          else if(checkboxDisabled_Person.checked == false){
+              input.style.display = "none";
+              input1.style.display = "none";
+              input.style.opacity = 0.0;
+              input1.style.opacity = 0.0;
+          }
+          
+          if(checkboxDisabled_Person.checked == false && checkboxValonteer.checked == false){
+            moveUP();
+            image.style.display = "none";
+            image1.style.display = "none";
+          }
+          }
+
+        function checkedValonteer(){
+          var checkboxDisabled_Person = document.getElementById("checkboxOVZ");
+          var checkboxValonteer = document.getElementById("checkboxVoloonteer");
+          var inputValonteer = document.getElementById("NumberValonteer");
+          var inputValonteerFile = document.getElementById("CheckValonteer");
+          var image = document.getElementById("icon170");
+          var image1 = document.getElementById("icon169");
+          
+          if(checkboxValonteer.checked){
+             checkboxDisabled_Person.checked = false;
+             fadeIn(inputValonteer, 70);
+             fadeIn(inputValonteerFile, 70);
+             inputValonteer.style.display = "block";
+             inputValonteerFile.style.display = "block";
+             image.style.display = "block";
+             image1.style.display = "block";
+             checked();
+             moveDown();
+          }
+          else if(checkboxValonteer.checked == false){
+            inputValonteer.style.display = "none";
+            inputValonteerFile.style.display = "none";
+            inputValonteer.style.opacity = 0.0;
+            inputValonteerFile.style.opacity = 0.0;
+          }
+          if(checkboxDisabled_Person.checked == false && checkboxValonteer.checked == false){
+            moveUP();
+            image.style.display = "none";
+            image1.style.display = "none";
+          }
+          }
+
+        function fadeIn(el, speed) {
+          var step = 1 / speed;
+          var interval = setInterval(function () {
+            if (+el.style.opacity >= 0.7)
+              clearInterval(interval);
+
+            el.style.opacity = +el.style.opacity + step;
+          }, speed / 1);
+        }
+
+
+        function moveDown() {
+          let coordY = 1549;
+          let time = setInterval(frame, 1);
+          function frame() {
+            if (coordY == 1790) {
+              clearInterval();
+            }
+            else {
+              coordY++;
+              btn.style.top = coordY + "px";
+            }
+          }
+        }
+
+        function moveUP() {
+          let coordY = 1790;
+          let time = setInterval(frame, 1);
+          function frame() {
+            if (coordY == 1549) {
+              clearInterval();
+            }
+            else {
+              coordY--;
+              btn.style.top = coordY + "px";
+            }
+          }
+        }
+      </script>
+    </div>
+  </form>
+</body>
+
+</html>
